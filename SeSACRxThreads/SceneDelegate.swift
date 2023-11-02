@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
 //        let rootViewController = UINavigationController(rootViewController: SignInViewController())
-        let rootViewController = UINavigationController(rootViewController: BirthdayViewController())
+        let rootViewController = UINavigationController(rootViewController: NicknameViewController())
          
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
