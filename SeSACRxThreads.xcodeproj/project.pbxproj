@@ -31,6 +31,7 @@
 		57FCD6D82AF3926F00781456 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FCD6D72AF3926F00781456 /* Extension+String.swift */; };
 		57FCD6DA2AF3B11E00781456 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FCD6D92AF3B11E00781456 /* BirthdayViewModel.swift */; };
 		57FCD6DC2AF3B84400781456 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FCD6DB2AF3B84400781456 /* NicknameViewModel.swift */; };
+		57FCD6DE2AF3CEE500781456 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FCD6DD2AF3CEE500781456 /* PhoneViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		57FCD6D72AF3926F00781456 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		57FCD6D92AF3B11E00781456 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		57FCD6DB2AF3B84400781456 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		57FCD6DD2AF3CEE500781456 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				0412806E2AEFAD2D00972552 /* BirthdayViewController.swift */,
 				57FCD6D92AF3B11E00781456 /* BirthdayViewModel.swift */,
 				041280702AEFAD3D00972552 /* PhoneViewController.swift */,
+				57FCD6DD2AF3CEE500781456 /* PhoneViewModel.swift */,
 				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
 				57FCD6DB2AF3B84400781456 /* NicknameViewModel.swift */,
 			);
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
+				57FCD6DE2AF3CEE500781456 /* PhoneViewModel.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
