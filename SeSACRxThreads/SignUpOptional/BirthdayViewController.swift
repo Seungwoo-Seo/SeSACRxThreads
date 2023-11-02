@@ -4,8 +4,11 @@
 //
 //  Created by jack on 2023/10/30.
 //
- 
+
 import UIKit
+
+import RxCocoa
+import RxSwift
 import SnapKit
 
 class BirthdayViewController: UIViewController {
@@ -65,6 +68,9 @@ class BirthdayViewController: UIViewController {
     }()
   
     let nextButton = PointButton(title: "가입하기")
+
+    let disposeBag = DisposeBag()
+    let viewModel = BirthdayViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +80,53 @@ class BirthdayViewController: UIViewController {
         configureLayout()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+
+        bind()
     }
     
     @objc func nextButtonClicked() {
         print("가입완료")
     }
 
+    func bind() {
+        // MARK: - Input
+        birthDayPicker.rx.date
+            .subscribe(with: self) {
+                $0.viewModel.birthday.onNext($1)
+            }
+            .disposed(by: disposeBag)
+
+        // MARK: - Output
+        viewModel.birthday
+            .map {
+                let calendar = Calendar.current
+                let component = calendar.dateComponents([.year], from: $0)
+                return component.year! <= 2006
+            }
+            .bind(with: self) { $0.nextButton.isEnabled = $1 }
+            .disposed(by: disposeBag)
+
+        viewModel.year
+            .map { "\($0)년" }
+            .bind(with: self) {
+                $0.yearLabel.text = $1
+            }
+            .disposed(by: disposeBag)
+
+        viewModel.month
+            .map { "\($0)월" }
+            .bind(with: self) {
+                $0.monthLabel.text = $1
+            }
+            .disposed(by: disposeBag)
+
+        viewModel.day
+            .map { "\($0)일" }
+            .bind(with: self) {
+                $0.dayLabel.text = $1
+            }
+            .disposed(by: disposeBag)
+    }
     
     func configureLayout() {
         view.addSubview(infoLabel)
