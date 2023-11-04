@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
 //        let rootViewController = UINavigationController(rootViewController: SignInViewController())
-        let rootViewController = UINavigationController(rootViewController: PhoneViewController())
+        let rootViewController = UINavigationController(rootViewController: SearchViewController())
          
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
